@@ -11,6 +11,7 @@ then
     echo "The databse is up and running :-D"
 fi
 
+python manage.py makemigrations
 python manage.py migrate
 
 exec "$@"
