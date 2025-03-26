@@ -30,8 +30,8 @@ SIMPLE_JWT = {
     "ROTATE_REFRESH_TOKEN": False,
     "BLACKLIST_AFTER_ROTATION": False,
     "UPDATE_LAST_LOGIN": True,
-    "SIGNING_KEY":"acomplexkey",
-    "ALOFRIGTHM": "H5512",
+    "SIGNIN_KEY":"acomplexkey",
+    "ALGORITHM": "H5512",
 }
 
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
@@ -41,11 +41,11 @@ ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = None
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': {
-        'rest_framework_simplejwt.aunthetication.JWTAuthentication',
-    },
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
     'DEFAULT_PERMISION_CLASSES': (
-        'rest_framework.permissions.IsAuthentication',
+        'rest_framework.permissions.IsAuthenticated',
     )
 }
 
